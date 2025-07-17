@@ -77,18 +77,18 @@ WSGI_APPLICATION = 'Even_Management.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 # DATABASES = {
-#     'default': dj_database_url.config(
-#         default=os.environ.get('postgresql://event_management_db_tgrd_user:X3eGksA3euXtpDQn28RlxKXGrOAbmBzy@dpg-d1sen8umcj7s73dkadng-a.oregon-postgres.render.com/event_management_db_tgrd'),
-#         conn_max_age=600
-#     )
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
 # }
+DATABASES = {
+    'default': dj_database_url.config(
+        default=os.environ.get('postgresql://event_management_db_tgrd_user:X3eGksA3euXtpDQn28RlxKXGrOAbmBzy@dpg-d1sen8umcj7s73dkadng-a.oregon-postgres.render.com/event_management_db_tgrd'),
+        conn_max_age=600
+    )
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
