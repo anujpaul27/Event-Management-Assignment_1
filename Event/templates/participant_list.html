@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participant List</title>
+</head>
+<body>
+    <h2>All Participants</h2>
+    
+    <a href="{% url 'participant_create' %}">Create New Participant</a>
+    
+    <ul>
+        {% for participant in participants %}
+            <li>
+                    
+                {{ participant.name }} — {{ participant.email|default:"No email" }}
+                    
+                    
+                <a href="{% url 'participant_update' participant.pk %}">Edit</a>
+                <a href="{% url 'participant_delete' participant.pk %}">Delete</a>
+                    
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
