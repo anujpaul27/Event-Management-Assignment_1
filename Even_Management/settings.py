@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'Even_Management.wsgi.application'
 # }
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get('postgresql://event_management_db_tgrd_user:X3eGksA3euXtpDQn28RlxKXGrOAbmBzy@dpg-d1sen8umcj7s73dkadng-a.oregon-postgres.render.com/event_management_db_tgrd'),
+        default='postgresql://event_management_db_tgrd_user:X3eGksA3euXtpDQn28RlxKXGrOAbmBzy@dpg-d1sen8umcj7s73dkadng-a.oregon-postgres.render.com/event_management_db_tgrd',
         conn_max_age=600
     )
 }
