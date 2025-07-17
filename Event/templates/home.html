@@ -36,7 +36,7 @@
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <a href="{% url "dashboard" %}" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Dashboard</a>
-            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Event</a>
+            <a href="#EventList" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Event</a>
             <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Participnat</a>
             <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Category</a>
           </div>
@@ -76,7 +76,7 @@
 
 
 {% comment %} Task List Section  {% endcomment %}
-<section class="bg-white dark:bg-gray-800 max-w-4xl mx-auto px-4 py-8"> 
+<section id="EventList" class="bg-blue-300 max-w-4xl mx-auto px-4 py-8"> 
   <h2 class="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white">Upcoming Events</h2>
   <ul class="space-y-6">  
     {% for event in events %}

@@ -67,9 +67,6 @@ def dashboard (request):
                                             }    
     return render(request,'dashboard.html',context)
 
-
-
-
 # Insertoin Tail as a dashboard 
 # ---------- Participant Views ----------
 
