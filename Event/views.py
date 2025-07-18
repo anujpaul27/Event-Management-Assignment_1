@@ -67,9 +67,7 @@ def dashboard (request):
                                             }    
     return render(request,'dashboard.html',context)
 
-# Insertoin Tail as a dashboard 
 # ---------- Participant Views ----------
-
 def participant_list(request):
     participants = Participant.objects.all()
     return render(request, 'participant_list.html', {'participants': participants})
