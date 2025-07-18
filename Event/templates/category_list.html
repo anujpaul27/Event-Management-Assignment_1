@@ -3,19 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Category List</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'dist/style.css' %}">
 </head>
-<body>
-    <h2>All categories </h2>
-    <a href="{% url 'category_create' %}">Create New categorie</a>
-    <ul>
-        {% for i in categories %}
-            <li>
-                {{ i.name }} — {{ i.descriptions }}
-                <a href="{% url 'category_update' i.pk %}">Edit</a>
-                <a href="{% url 'category_delete' i.pk %}">Delete</a>
-            </li>
-        {% endfor %}
-    </ul>
+<body class="bg-gray-900 min-h-screen flex flex-col items-center p-6 font-sans">
+
+    <div class="w-full max-w-4xl bg-gray-800 rounded-xl shadow-md p-6">
+        <h2 class="text-3xl font-bold text-center text-gray-400 mb-6"> All Categories</h2>
+
+        <div class="text-right mb-4">
+            <a href="{% url 'category_create' %}"
+               class="inline-block px-4 py-2 bg-blue-300 text-white rounded hover:bg-blue-700 transition duration-200">
+               Create New Category
+            </a>
+        </div>  
+
+        <ul class="space-y-4">
+            {% for i in categories %}
+                <li class="border rounded-lg p-4 bg-blue-50 hover:bg-blue-200 transition duration-300">
+                    <h3 class="text-xl  font-semibold text-gray-400 mb-2">{{ i.name }}</h3>
+
+                    <div class="space-x-4 sm:inline text-gray-400">
+                        <a href="{% url 'category_update' i.pk %}"> Edit</a>
+                        <a href="{% url 'category_delete' i.pk %}"> Delete</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
 </body>
 </html>

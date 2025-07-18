@@ -4,24 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Participant List</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'dist/style.css' %}">
 </head>
-<body>
-    <h2>All Participants</h2>
+
+<body class=" bg-gray-900 min-h-screen p-6  flex flex-col items-center  ">
     
-    <a href="{% url 'participant_create' %}">Create New Participant</a>
-    
-    <ul>
-        {% for participant in participants %}
-            <li>
-                    
-                {{ participant.name }} — {{ participant.email|default:"No email" }}
-                    
-                    
-                <a href="{% url 'participant_update' participant.pk %}">Edit</a>
-                <a href="{% url 'participant_delete' participant.pk %}">Delete</a>
-                    
-            </li>
+
+    <div class=" bg-gray-800 rounded-xl  p-6 w-full max-w-4xl ">
+        <h1 class=" font-bold text-3xl text-gray-400 text-center pb-5">All Participant </h1>
+        
+        <div class=" text-white hover:bg-blue-700 text-right inline-block p-2 rounded-md" >
+            <a href="{% url "participant_create" %}"> Create a New Participant </a>
+        </div>
+
+        <ul class="space-y-4">
+        {% for i in participants %}   
+        
+
+            <li class="p-2 border rounded-lg transition duration-300">
+                <h1 class="text-gray-400 text-2xl p-2  "> {{i.name}} </h1>
+
+                <div class="text-gray-400 space-x-4 sm:inline ">
+                    <a href="{% url "participant_update" i.pk  %}">Edit</a>
+                    <a href="{% url "participant_delete" i.pk  %}">Delete</a>
+                </div>
+
+            </li>       
+        
         {% endfor %}
-    </ul>
+        </ul>
+    
+    </div>
+
+
+
 </body>
+
+
+
 </html>

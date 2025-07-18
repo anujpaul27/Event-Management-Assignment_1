@@ -65,8 +65,8 @@ class ParticipantForm (forms.ModelForm):
                 'placeholder': 'Name'
             }),
             'email': forms.EmailInput(attrs={
-                'class': ' block w-full p-3 text-white-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-blue',
-                'placeholder': 'Enter You Email..'
+                'class': 'block w-full p-3 text-white-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white',
+                'placeholder': 'Email'
             }),
             'events': forms.CheckboxSelectMultiple(attrs={
                 'class': 'text-white'
